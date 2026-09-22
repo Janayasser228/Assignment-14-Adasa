@@ -8,7 +8,7 @@ export default function usePosts() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('./posts.json')
+    fetch(`${import.meta.env.BASE_URL}posts.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Could not load posts.json')
         return res.json()
